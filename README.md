@@ -116,10 +116,12 @@ Code is built on [mmdet](https://mmdetection.readthedocs.io/en/latest/get_starte
 
 ### Citation
 ````
-@article{elbatel2024fd,
+@inproceedings{elbatel2024fd,
   title={FD-SOS: Vision-Language Open-Set Detectors for Bone Fenestration and Dehiscence Detection from Intraoral Images},
   author={Elbatel, Marawan and Liu, Keyuan and Yang, Yanqi and Li, Xiaomeng},
-  journal={arXiv preprint arXiv:2407.09088},
-  year={2024}
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={629--639},
+  year={2024},
+  organization={Springer}
 }
 ````
