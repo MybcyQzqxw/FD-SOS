@@ -18,13 +18,13 @@
 
 1. 克隆仓库：
     ```sh
-    git clone https://github.com/xmed-lab/FD-SOS
+    git clone https://github.com/MybcyQzqxw/FD-SOS
     cd FD-SOS
     ```
 
 2. 创建虚拟环境：
     ```sh
-    conda create -n SOS python=3.8
+    conda create -n SOS python=3.8 -y
     conda activate SOS
     ```
 
