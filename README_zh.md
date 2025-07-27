@@ -41,17 +41,12 @@
 ### 下载数据、模型和配置
 
 5. 下载图像数据：
-    ```sh
-    # 下载图像
-    gdown https://drive.google.com/uc?id=1Xm794_tzCh1TtIfJYJLFlmv013GTL_Uh
-    unzip images_all.zip -d data/v1/
-   ```
+- 下载地址：<https://drive.google.com/uc?id=1Xm794_tzCh1TtIfJYJLFlmv013GTL_Uh>
+- 解压至 `data/v1/images_all` 路径
 
 6. 下载模型权重和配置文件：
-   ```sh
-    # 下载模型权重
-    gdown --folder https://drive.google.com/drive/folders/1zgNxQEXhGm3FTIQAKqkYd3YH0O5SHhm_
-    ```
+- 下载地址：<https://drive.google.com/drive/folders/1zgNxQEXhGm3FTIQAKqkYd3YH0O5SHhm_>
+- 解压至 `experiments` 路径
 
 ## 生成预测和评估
 
