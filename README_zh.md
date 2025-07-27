@@ -16,35 +16,35 @@
 
 ### 安装环境
 
-1. 克隆仓库：
+1. 克隆仓库
     ```sh
     git clone https://github.com/MybcyQzqxw/FD-SOS.git
     cd FD-SOS
     ```
 
-2. 创建虚拟环境：
+2. 创建虚拟环境
     ```sh
     conda create -n SOS python=3.8 -y
     conda activate SOS
     ```
 
-3. 安装 [PyTorch](https://pytorch.org/get-started/locally/)：
+3. 安装 [PyTorch](https://pytorch.org/get-started/locally/)
     ```sh
     pip3 install torch==2.1.2+cu118 torchvision==0.16.2+cu118 torchaudio==2.1.2+cu118 --index-url https://download.pytorch.org/whl/cu118
     ```
 
-4. 按照 [mmdet](https://mmdetection.readthedocs.io/en/latest/get_started.html) 安装依赖项：
+4. 按照 [mmdet](https://mmdetection.readthedocs.io/en/latest/get_started.html) 安装依赖项
     ```sh
    bash requirements.sh
     ```
 
 ### 下载数据、模型和配置
 
-5. 下载图像数据：
+5. 下载图像数据
 - 下载地址：<https://drive.google.com/uc?id=1Xm794_tzCh1TtIfJYJLFlmv013GTL_Uh>
 - 解压至 `data/v1/images_all` 路径
 
-6. 下载模型权重和配置文件：
+6. 下载模型权重和配置文件
 - 下载地址：<https://drive.google.com/drive/folders/1zgNxQEXhGm3FTIQAKqkYd3YH0O5SHhm_>
 - 解压至 `experiments` 路径
 
