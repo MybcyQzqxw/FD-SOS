@@ -4,6 +4,20 @@ from mmdet.apis import DetInferencer
 
 root_dir = r'./experiments'
 batch_size = 8
+
+# 配置文件映射
+config_mapping = {
+    'FD_diff': 'configs/DiffusionDet/configs/diffusiondet_swin_fpn_500.py',
+    'FD_load_deform': 'configs/deformable_detr/deformable-detr_r50_16xb2-50e_coco.py',
+    'FD_load_dino': 'configs/dino/dino-4scale_r50_8xb2-12e_coco.py',
+    'FD_load_diff': 'configs/DiffusionDet/configs/diffusiondet_swin_fpn_500.py',
+    'FD_glip': 'configs/glip/glip_atss_swin-t_a_fpn_dyhead_16xb2_ms-2x_funtune_coco.py',
+    'FD_gdino': 'configs/grounding_dino/grounding_dino_swin-t_finetune_16xb2_1x_coco.py',
+    'FD_BCG_glip': 'configs/glip/glip_atss_swin-t_a_fpn_dyhead_16xb2_ms-2x_funtune_coco.py',
+    'FD_BCG_gdino': 'configs/grounding_dino/grounding_dino_swin-t_finetune_16xb2_1x_coco.py',
+    'FD_BCG_SOS': 'configs/FD-SOS/grounding_FD_BCG_teeth_specific.py',
+}
+
 experiments_to_infer = [
     f"FD_diff", #
 
@@ -50,10 +64,20 @@ for _work_dir in experiments_to_infer:
     if os.path.exists(work_dir):
         out_work_dir = work_dir.split('/')[-1]
 
+        # 查找最佳权重文件
         best_checkpoint = [i for i in os.listdir(work_dir) if i.startswith('best_')][-1]
-        config_checkpoint = [i for i in os.listdir(work_dir) if i.endswith('.py')][0]
-        # %%
-        config_path = os.path.join(work_dir, config_checkpoint)
+        
+        # 从配置映射中获取配置文件路径
+        if _work_dir in config_mapping:
+            config_path = config_mapping[_work_dir]
+        else:
+            print(f'No config mapping found for {_work_dir}, skipping...')
+            continue
+            
+        # 检查配置文件是否存在
+        if not os.path.exists(config_path):
+            print(f'Config file {config_path} does not exist, skipping {_work_dir}...')
+            continue
 
         # Setup a checkpoint file to load
         checkpoint = os.path.join(work_dir, best_checkpoint)
