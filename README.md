@@ -2,6 +2,8 @@
 
 ###### [Marawan Elbatel](https://marwankefah.github.io/), Keyuan Liu, Yanqi Yang, [Xiaomeng Li](https://xmengli.github.io/)
 
+English | [简体中文](README_zh.md)
+
 This is the official implementation of the framework FD-SOS, for **FD** **S**creening utilizing **O**pen-**S**et detectors  in intraoral images.
 
 ## Abstract
