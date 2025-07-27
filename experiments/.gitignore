@@ -1,0 +1,25 @@
+# Ignore all experimental outputs
+*
+!.gitignore
+
+# But allow specific config files if needed
+!*.py
+!*.yaml
+!*.yml
+!*.json
+!*.md
+!README*
+
+# Ignore large files and model outputs
+*.pth
+*.pkl
+*.log
+*.out
+*.err
+
+# Ignore result directories
+*/work_dirs/
+*/checkpoints/
+*/logs/
+*/runs/
+*/tb_logs/

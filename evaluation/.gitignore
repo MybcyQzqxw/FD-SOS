@@ -1,0 +1,25 @@
+# Ignore evaluation result files but keep scripts
+*.json
+!example_*.json  # Keep example files if any
+
+# Keep Python scripts
+!*.py
+!*.md
+!README*
+
+# Ignore temporary evaluation files
+*.tmp
+*.temp
+*.cache
+
+# Ignore plot outputs
+*.png
+*.jpg
+*.pdf
+*.svg
+!plots/.gitkeep
+
+# Ignore logs
+*.log
+*.out
+*.err
