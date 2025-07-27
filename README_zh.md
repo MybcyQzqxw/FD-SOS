@@ -18,7 +18,7 @@
 
 1. 克隆仓库：
     ```sh
-    git clone https://github.com/MybcyQzqxw/FD-SOS
+    git clone https://github.com/MybcyQzqxw/FD-SOS.git
     cd FD-SOS
     ```
 
