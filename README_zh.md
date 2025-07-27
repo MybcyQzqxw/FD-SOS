@@ -93,12 +93,33 @@
 
 要训练FD-SOS，请按照[快速开始](#快速开始)说明安装依赖项。
 
-所有实验的配置文件都在 [train_FD.sh](train_FD.sh) 中提供。
+### 📋 训练要求
+
+- **GPU**: 建议使用RTX 4090或更高性能的GPU（至少16GB显存）
+- **CUDA**: 支持CUDA 11.8+
+- **内存**: 建议至少32GB系统内存
+- **存储**: 建议至少50GB可用空间
+
+### 🔧 配置说明
+
+**单GPU训练**（推荐用于单卡环境）：
+```bash
+CUDA_VISIBLE_DEVICES=0 python tools/train.py configs/FD-SOS/grounding_FD_BCG_teeth_specific.py --work-dir ./experiments/FD_BCG_SOS --auto-scale-lr
+```
+
+**多GPU训练**（如果您有多张GPU）：
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash ./tools/dist_train.sh configs/FD-SOS/grounding_FD_BCG_teeth_specific.py 4 --work-dir ./experiments/FD_BCG_SOS --auto-scale-lr
+```
+
+所有实验的配置文件都在 [train.sh](train.sh) 中提供。
 
 要运行FD-SOS基准测试，确保所有图像都在 [data/v1/images_all](data/v1/images_all) 中，然后运行：
 ```bash
 bash train.sh
 ```
+
+**注意**：默认的 `train.sh` 已配置为单GPU训练。如果您有多张GPU，请根据实际情况修改脚本中的GPU配置。
 
 ## 特性
 
